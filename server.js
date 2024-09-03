@@ -109,46 +109,205 @@ app.post('/api/content', async (req, res) => {
   }
 });
 
+// app.get('/', (req, res) => {
+//   console.log('\n Response Generated...');
+//   res.send(`
+//     <!DOCTYPE html>
+//     <html lang="en">
+//     <head>
+//       <meta charset="UTF-8">
+//       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//       <title>Welcome to AI Chat Bot</title>
+//       <style>
+//         :root {
+//           --primary-color: #001f3f;
+//           --secondary-color: #ffffff;
+//           --accent-color: #ff4136;
+//           --background-color: #f1f1f1;
+//           --text-color: #333333;
+//           --heading-color: #001f3f;
+//         }
 
+//         body {
+//           font-family: 'Roboto', Arial, sans-serif;
+//           margin: 0;
+//           padding: 0;
+//           background-color: var(--background-color);
+//           color: var(--text-color);
+//           display: flex;
+//           align-items: center;
+//           justify-content: center;
+//           height: 100vh;
+//         }
+
+//         .container {
+//           background-color: var(--primary-color);
+//           color: var(--secondary-color);
+//           padding: 40px;
+//           border-radius: 10px;
+//           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//           max-width: 600px;
+//           width: 100%;
+//           text-align: center;
+//         }
+
+//         h1 {
+//           color: var(--accent-color);
+//           font-size: 2.5em;
+//           margin-bottom: 20px;
+//         }
+
+//         h2 {
+//           color: var(--secondary-color);
+//           font-size: 1.8em;
+//           margin-bottom: 15px;
+//         }
+
+//         p {
+//           font-size: 1.1em;
+//           line-height: 1.6;
+//           margin-bottom: 15px;
+//         }
+
+//         .bold-text {
+//           font-weight: bold;
+//         }
+
+//         strong {
+//           color: var(--accent-color);
+//         }
+
+//         footer {
+//           margin-top: 20px;
+//           font-size: 0.9em;
+//           color: var(--secondary-color);
+//         }
+//       </style>
+//     </head>
+//     <body>
+//       <div class="container">
+//         <h1>Welcome to AI Chat Bot</h1>
+//         <h2>Google Gemini Integration with Node.js</h2>
+//         <h2>Using Gemini AI API (model: "gemini-1.5-flash")</h2>
+//         <p>You can use this service as an AI Content Generator or AI Chat Bot.</p>
+//         <p>For AI Chat Bot, send a POST request to <strong>/api/chat</strong>.</p>
+//         <p>For Content Generation, send a POST request to <strong>/api/content</strong>.</p>
+//         <p class="bold-text">Send a POST request with a JSON body containing { "Me": "Your Prompt" }</p>
+//         <p>Use Postman or another API testing tool for the best experience.</p>
+//         <footer>Thank you for using our service!</footer>
+//       </div>
+//     </body>
+//     </html>
+//   `);
+// });
+
+  
 app.get('/', (req, res) => {
   console.log('\n Response Generated...');
   res.send(`
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <title>Welcome to AI Chat Bot</title>
-      <style>
-        body {
-          font-family: Arial, sans-serif;
-          margin: 20px;
-        }
-        h1 {
-          color: #333;
-        }
-        h2 {
-          color: #555;
-        }
-        p {
-          font-size: 16px;
-          color: #555;
-        }
-      </style>
-    </head>
-    <body>
-      <h1>Welcome To AI Chat Bot Created By Shubhradeep Maity</h1>
-      <h2>Using Gemini AI API (model: "gemini-1.5-flash")</h2>
-      <h2>Integrating Google Gemini to Node js Application [Gemini X Node.js]</h2>
-      <p>You can use it as an AI Content Generator or AI Chat Bot.</p>
-      <p>For AI Chat Bot, send a POST request to <strong>/api/chat</strong>.</p>
-      <p>For Content Generation, send a POST request to <strong>/api/content</strong>.</p>
-      <p>Use Postman for a better experience.</p>
-      <h2>Thank You!</h2>
-    </body>
-    </html>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Chat Bot</title>
+  <style>
+    :root {
+      --primary-color: rgb(	208,0,0);
+      --secondary-color: white;
+      --body-color: crimson;
+      --accent-color: #FF8C00;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--primary-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      background-color: rgb(0, 0, 33);
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      width: 60%; /* Increased width */
+      max-width: 800px;
+      height: auto; /* Adjusted height */
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    h1, h2 {
+      color: var(--body-color);
+    }
+
+    p {
+      color: var(--secondary-color);
+      font-size: 18px;
+    }
+
+    .bold-text {
+      font-weight: bold;
+    }
+
+    strong {
+      color: var(--accent-color);
+    }
+
+    .postman-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .postman-button:hover {
+      background-color: darkorange;
+    }
+
+    footer {
+      margin-top: 20px;
+      color: var(--body-color);
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to AI Chat Bot</h1>
+    <h2>Google Gemini Integration with Node.js</h2>
+    <h2>Using Gemini AI API (model: "gemini-1.5-flash")</h2>
+    <p>You can use this service as an AI Content Generator or AI Chat Bot.</p>
+    <p>For AI Chat Bot, send a POST request to <strong>/api/chat</strong>.</p>
+    <p>For Content Generation, send a POST request to <strong>/api/content</strong>.</p>
+    <p class="bold-text">Send a POST request with a JSON body containing { "Me": "Your Prompt" }</p>
+    <p>Use Postman or another API testing tool for the best experience.</p>
+    <a href="https://www.postman.com/" class="postman-button">Postman</a>
+    <footer>Thank you for using our service!</footer>
+  </div>
+</body>
+</html>
+
   `);
 });
 
-  
+
+
+
+
+
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
