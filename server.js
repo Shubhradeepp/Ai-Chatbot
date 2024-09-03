@@ -110,16 +110,45 @@ app.post('/api/content', async (req, res) => {
 });
 
 
-app.get('/',(req, res) => {
+app.get('/', (req, res) => {
   console.log('\n Response Generated...');
-  res.send(`Welcome To AI Chat Bot Created By Shubhradeep Using Gemini Ai API (model: "gemini-1.5-flash")
-    \n You can Use it As  Ai Content Generator OR Ai Chat Bot 
-    \n
-    For Ai Chat Bot Hit a post request on  /api/content 
-    \n For Content Generarion Use Hit a post request on /api/content
-    \n Use PostMan For Better Experience`)
-})
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Welcome to AI Chat Bot</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+        }
+        h1 {
+          color: #333;
+        }
+        h2 {
+          color: #555;
+        }
+        p {
+          font-size: 16px;
+          color: #555;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Welcome To AI Chat Bot Created By Shubhradeep Maity</h1>
+      <h2>Using Gemini AI API (model: "gemini-1.5-flash")</h2>
+      <h2>Integrating Google Gemini to Node js Application [Gemini X Node.js]</h2>
+      <p>You can use it as an AI Content Generator or AI Chat Bot.</p>
+      <p>For AI Chat Bot, send a POST request to <strong>/api/chat</strong>.</p>
+      <p>For Content Generation, send a POST request to <strong>/api/content</strong>.</p>
+      <p>Use Postman for a better experience.</p>
+      <h2>Thank You!</h2>
+    </body>
+    </html>
+  `);
+});
 
+  
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
