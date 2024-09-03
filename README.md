@@ -1,6 +1,7 @@
 ﻿# Ai-Chatbot
 Welcome to AI Chat Bot Created By Shubhradeep
-Google Gemini Integration with Node.js [Gemini X Node,js]
+Google Gemini Integration with Node.js [Gemini X Node.js]
+
 Using Gemini AI API (model: "gemini-1.5-flash")
 You can use this service as an AI Content Generator or AI Chat Bot.
 
