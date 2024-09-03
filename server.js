@@ -109,7 +109,7 @@ app.post('/api/content', async (req, res) => {
   }
 });
 
-// app.get('/', (req, res) => {
+
 //   console.log('\n Response Generated...');
 //   res.send(`
 //     <!DOCTYPE html>
