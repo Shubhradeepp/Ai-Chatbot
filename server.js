@@ -110,6 +110,15 @@ app.post('/api/content', async (req, res) => {
 });
 
 
+app.get('/',(req, res) => {
+  console.log('\n Response Generated...');
+  res.send(`Welcome To AI Chat Bot Created By Shubhradeep Using Gemini Ai API (model: "gemini-1.5-flash")
+    \n You can Use it As  Ai Content Generator OR Ai Chat Bot 
+    \n
+    For Ai Chat Bot Hit a post request on  /api/content 
+    \n For Content Generarion Use Hit a post request on /api/content
+    \n Use PostMan For Better Experience`)
+})
 
 
 const port = process.env.PORT || 3000;
