@@ -1,4 +1,5 @@
 ﻿# Ai-Chatbot
+  TEST THE API =>  https://ai-chatbot-ow5v.onrender.com/
 Welcome to AI Chat Bot Created By Shubhradeep
 Google Gemini Integration with Node.js [Gemini X Node.js]
 
